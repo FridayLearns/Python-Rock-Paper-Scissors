@@ -1,0 +1,63 @@
+import random
+
+user_score=0
+computer_score=0
+
+while True:
+    user_select = input("Type Rock/Paper/Scissors or Q to quit: ").lower()
+    if user_select == "q":
+        print("You won", user_score, "times.")
+        print("The computer won", computer_score, "times.")
+        print("Goodbye!")
+        break
+    else:
+
+      com_sel = random.randint(1,3)
+      user_sel = user_select.capitalize()
+
+      match user_sel:
+          case "Rock":
+              print("You selected Rock")
+          case "Paper":
+              print("You selected Paper")
+          case "Scissors":
+              print("You selected Scissors")
+
+      match com_sel:
+          case 1:
+              print("Computer selected Rock")
+          case 2:
+              print("Computer selected Paper")
+          case 3:
+              print("Computer selected Scissors")
+
+
+
+    if com_sel == 1:
+              if  user_sel == "Rock":
+                  print("It's a tie!")
+              elif user_sel == "Paper":
+                  print("You win!")
+                  user_score += 1
+              elif user_sel == "Scissors":
+                  print("You lose!")
+                  computer_score += 1
+    elif com_sel == 2:
+              if  user_sel == "Rock":
+                  print("You lose!")
+                  computer_score += 1
+              elif user_sel == "Paper":
+                  print("It's a tie!")
+              elif user_sel == "Scissors":
+                  print("You win!")
+                  user_score += 1
+    elif com_sel == 3:
+              if  user_sel == "Rock":
+                  print("You win!")
+                  user_score += 1
+              elif user_sel == "Paper":
+                  print("You lose!")
+                  computer_score += 1
+              elif user_sel == "Scissors":
+                  print("It's a tie!")
+    continue
